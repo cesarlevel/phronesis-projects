@@ -8,7 +8,8 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'index.html'),
         debriefs: resolve(__dirname, 'debriefs/index.html'),
-        modules: resolve(__dirname, 'src/modules/test.html'),
+        home: resolve(__dirname, 'src/modules/home.html'),
+        casinoDeposit: resolve(__dirname, 'src/modules/casino-deposit.html'),
       },
     },
   },

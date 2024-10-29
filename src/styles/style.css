@@ -1,11 +1,14 @@
+@import url("debriefs.css");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-primary: #646cff;
+
+  color: var(--color-primary);
+  background-color: #030c25;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,19 +18,16 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-primary);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-primary);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 3rem;
 }
 
 h1 {
@@ -36,31 +36,7 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 button {
@@ -75,22 +51,38 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--color-primary);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+nav {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-primary);
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    a {
+      &.nav-item {
+        cursor: pointer;
+        padding: 0.6rem;
+    
+        &.is-active {
+          border-bottom: 3px solid var(--color-primary);
+        }
+      }
+    }
   }
 }
+
+footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-primary);
+}
+

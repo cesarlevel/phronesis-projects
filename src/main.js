@@ -1,18 +1,26 @@
-import './style.css';
+import Router from './services/router.js';
+import { debriefs } from '../debriefs/debriefs.js';
+const modules = import.meta.glob('./modules/*.js');
 
-const app = document.getElementById('app');
+// console.log(import.meta.env.VITE_API_KEY);
+async function init() {
+  window.app = {};
+  app.router = new Router();
+  app.debriefs = debriefs;
+  
+  for await (const path of Object.keys(modules)) {
+    const mod = await modules[path]();
+    app = {
+      ...app,
+      [path.replace(/\.\/modules\/|(\.js)/gi, '')]: mod.default,
+    }
+  }
 
-async function fetchHTML(url) {
-  const response = await fetch(url);
-  return response.text();
+  window.addEventListener('executemodule', async (e) => {
+    if (app?.[e.detail.module]) {
+      await app[e.detail.module]();
+    }
+  });
 }
 
-async function main() {
-  const debriefs = await fetchHTML(`${window.location.origin}/src/modules/test.html`);
-  console.log(debriefs);
-  app.innerHTML = debriefs;
-}
-
-console.log(import.meta.env.VITE_API_KEY);
-
-main();
+window.addEventListener('DOMContentLoaded', init);
