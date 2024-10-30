@@ -3,7 +3,6 @@ export default class State {
         this.websiteId = 'www.dc-games.com';
         this.organizationId = 'phronesis-dc-games';
         this.pAPIKey = 'pk_sandbox_KvdZ_dAGPjbBZvVGxKUnpOfqvABlIEbzWyngFw6';
-        this.apiKey = import.meta.env.VITE_API_KEY;
         this.loaderEl = document.querySelector('.loader');
         this.customerId = 'cus_01JBEYJ3WQ4MYV9CZCQ9H6GARN';
         this.instrumentsBaseOptions = {
