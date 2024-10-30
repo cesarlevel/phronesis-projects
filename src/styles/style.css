@@ -1,4 +1,5 @@
 @import url("debriefs.css");
+@import url("instruments.css");
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -42,14 +43,20 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-primary);
   padding: 0.6em 1.2em;
+  color: var(--color-primary);
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-secondary);
   cursor: pointer;
   transition: border-color 0.25s;
+
+  &.is-active {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
 }
 button:hover {
   border-color: var(--color-primary);

@@ -2,10 +2,15 @@ import Router from './services/router.js';
 import State from './services/state.js';
 const modules = import.meta.glob('./modules/*.js');
 const templates = import.meta.glob('./modules/*.html', {query: '?raw'});
+import RebillyAPI from "rebilly-js-sdk";
 
-// console.log(import.meta.env.VITE_API_KEY);
 async function init() {
   window.app = {};
+  app.api = RebillyAPI({
+    apiKey: import.meta.env.VITE_API_KEY,
+    organizationId: this.organizationId,
+    sandbox: true,
+  });
   const routes = {};
 
   app.state = new State();

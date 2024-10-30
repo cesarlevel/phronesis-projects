@@ -11,5 +11,7 @@
   "devDependencies": {
     "vite": "^5.4.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rebilly-js-sdk": "^56.61.1"
+  }
 }

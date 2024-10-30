@@ -1,0 +1,26 @@
+/* Instreuments */
+.instruments-wrapper {
+  display: inline-block;
+  width: 600px;
+  min-height: 240px;
+  padding: 3rem;
+  border: 1px solid var(--color-primary);
+  margin: 2rem 0;
+  position: relative;
+}
+
+.instruments-loader {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-secondary);
+
+  &.is-active {
+    display: flex;
+  }
+}
