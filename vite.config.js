@@ -7,7 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
-        debriefs: resolve(__dirname, 'debriefs/index.html'),
+        debriefs: resolve(__dirname, 'src/modules/debriefs.html'),
         home: resolve(__dirname, 'src/modules/home.html'),
         casinoDeposit: resolve(__dirname, 'src/modules/casino-deposit.html'),
       },

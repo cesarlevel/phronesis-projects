@@ -1,22 +1,16 @@
 export default class Router {
-    constructor() {
+    constructor(routes = {}) {
+        this.routes = routes;
         this.appEl = null;
         this.navItemsEls = [];
         this.currentRoute = '/home';
-        this.init().then(() => {
-            console.log('Router initialization complete');
-        });
+        this.init();
     }
 
     static homeRouteRegex = new RegExp(/^\/home$|^\/$/);
 
     cleanRoute(route) {
         return route.replace('/', '');
-    }
-
-    async fetchHTML(url) {
-        const response = await fetch(url);
-        return response.text();
     }
 
     updateNavItemStyles(route) {
@@ -42,7 +36,7 @@ export default class Router {
         });
     }
 
-    async init() {
+    init() {
         this.navItemsEls = document.querySelectorAll('.nav-item');
         this.appEl = document.getElementById('app');
 
@@ -53,27 +47,21 @@ export default class Router {
             this.bindNavItemEvents(item);
         });
 
-        window.addEventListener('popstate', async (e) => {
+        window.addEventListener('popstate', (e) => {
             const route = e.state?.route;
             if (route) {
                 this.updateNavItemStyles(route);
-                await this.go(route, false);
+                this.go(route, false);
                 window.dispatchEvent(new CustomEvent('executemodule', { detail: { module: this.cleanRoute(route) } }));
             }
         });
 
         const initialRoute = this.checkValidRoute(window.location.pathname) ? window.location.pathname : '/';
-        await this.go(initialRoute);
+        this.go(initialRoute);
     }
 
-    async go(route, addToHistory = true) {
-        let template = null;
-        if (route.includes('debriefs')) {
-            template = await this.fetchHTML(`${window.location.origin}/debriefs/index.html`);
-        } else {
-            template = await this.fetchHTML(`${window.location.origin}/src/modules${Router.homeRouteRegex.test(route) ? '/home' : route}.html`);
-        }
-        this.appEl.innerHTML = template;
+    go(route, addToHistory = true) {
+        this.appEl.innerHTML = this.routes[Router.homeRouteRegex.test(route) ? '/home' : route];
 
         if (addToHistory) {
             history.pushState({ route }, null, Router.homeRouteRegex.test(route) ? '/' : route);
