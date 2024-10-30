@@ -6,9 +6,10 @@
   font-weight: 400;
 
   --color-primary: #646cff;
+  --color-secondary: #030c25;
 
   color: var(--color-primary);
-  background-color: #030c25;
+  background-color: var(--color-secondary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -84,5 +85,27 @@ nav {
 footer {
   margin-top: 3rem;
   border-top: 1px solid var(--color-primary);
+}
+
+.container {
+  position: relative;
+  min-height: 160px;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 0 10px var(--color-secondary);
+  display: none;
+
+  &.is-active {
+    display: flex;
+  }
 }
 

@@ -8,6 +8,9 @@ async function init() {
   window.app = {};
   const routes = {};
 
+  app.state = new State();
+  app.state.showLoader();
+
   for await (const [path, mod] of Object.entries(templates)) {
     const {default: template} = await mod();
     routes[path.replace(/\.\/modules|(\.html)/gi, '')] = template;
@@ -25,13 +28,14 @@ async function init() {
   }
 
   app.router = new Router(routes);
-  app.state = new State();
 
   window.addEventListener('executemodule', async (e) => {
     if (app?.modules?.[e.detail.module]) {
       await app.modules[e.detail.module]();
     }
   });
+
+  app.state.hideLoader();
 }
 
 window.addEventListener('DOMContentLoaded', init);
