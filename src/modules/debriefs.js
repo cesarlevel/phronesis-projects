@@ -1,5 +1,5 @@
 
-const templates = import.meta.glob('../../debriefs/*.html', {query: '?raw'});
+const templates = import.meta.glob('../debriefs/*.html', {query: '?raw'});
 
 export default async function debriefs() {
     const debriefsEl = document.querySelector('.debriefs-items');
