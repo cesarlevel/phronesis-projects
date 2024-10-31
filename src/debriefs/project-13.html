@@ -1,11 +1,31 @@
-<h2>Project 13</h2>
+<h2>Project 13: Casino deposit payment methods</h2>
 <h3>What made you smile?</h3>
-<p>Smile</p>
+<p>Working with new partners!</p>
 <h3>What did you find confusing?</h3>
 <ul>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
+    <li>
+        There are multiple options for bank transfer on the gateway account form, which one is the right one? We selected the first one but is defenitly confusing.
+        <br/>
+        <img src="bank-transfers.png" alt="project-13-1">
+    </li>
+    <li>
+        On the marketing website the payment method bank transfer is showing up multiple times, on the gateway accounts that accept bank transfer.
+        <br/>
+        <img src="mkt-1.png" alt="project-13-1">
+    </li>
+    <li>Marketing website gateways page could have a link to the payment methods pages.</li>
+    <li>
+        When a deposit is finalized and then we switch to another currency Instruments will display an error related to the previous action. Reloading the page will remove the error.
+        <br/>
+        <img src="casino-deposit-error.png" alt="project-13-1">
+    </li>
+    <li>
+        When switching tabs on Instrument that have an off-site behaviuor the copy will not change, when proceeding to the next step the confirmation it will show the right method.
+        <br/>        
+        <img src="stabs.gif" alt="project-13-1">
+    </li>
+    
+    <li>There is no documentation that links the ready to pay requested events to how to display the payment methods in order.</li>
+    <li>We finally found the rule event that allows us to re-arrange the methods but filters in the rules engine event are wrong, they show transaction related filters and not showing deposit request, website, or filters that can actually help us modify the autocome.</li>
 </ul>
 
