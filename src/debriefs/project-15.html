@@ -1,0 +1,42 @@
+<h2>Project 15: Casino deposit 3ds</h2>
+<h3>What made you smile?</h3>
+<p>BankCountry filter worked</p>
+<h3>What did you find confusing?</h3>
+<p>
+    The documentation guided us on setting up the test just fine. The branching on 3DS was not very clear initially, as we used the filters
+    on the gateway form page (bankCountry in CA) and no challange was happening on the deposit form. We did check on the transaction details page
+    that the filter was working fine (even if we didn't know how exactly it worked under the hood which was a surprise as there are many option
+    for countries in the filters) and the 3DS checked happened in a frictionless way. Took us a bit until we noticed in the documation that
+    the only card that works to show the challange was an US one (BIN 41111).
+</p>
+<ul>
+    <li>
+        Link to <b>Test a generic 3DS flow</b> doesn't have an anchor tag for it, we should probably change it to #test-a-generic-offsite-approval-flow.
+        <br/>
+        <img src="3ds-doc-link.png" alt="project-5-1">
+    </li>
+    <li>
+        It is possible to add any value in the filters select input this is probably useful in other filters, but not for things like a set of values.
+        <br/>
+        <img src="3ds-gateway-filter.png" alt="project-5-2">
+    </li>
+    <li>
+        3DS messages on the deposit form shows the word players, we know this was specifically made for ITS but in the future
+        we should consider if the form will only going to be use for casino players.
+        <br/>
+        <img src="3ds-player.png" alt="project-5-3">
+    </li>
+    <li>
+        Only the credit card with BIN 41111 will show the challange, there is no Canadian card that can show that flow
+    </li>
+    <li>
+        Canadian testing cards works fine for frictionless 3DS flows
+    </li>
+    <li>
+        There is an issue with the 3DS challange page, in which the styles sent are preventing to see the challange text
+        if the styles are on the dark mode side. Maybe we can wrap the 3DS challange part with an specific background.
+        <br/>
+        <img src="3ds-challange-screen.png" alt="project-5-1">
+    </li>
+</ul>
+
