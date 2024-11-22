@@ -50,9 +50,13 @@ input {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--color-secondary);
-  cursor: pointer;
   transition: border-color 0.25s;
   outline: none;
+  
+  &::placeholder {
+    color: var(--color-primary);
+    opacity: 0.5;
+  }
 }
 
 button {

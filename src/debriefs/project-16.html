@@ -1,0 +1,36 @@
+<h2>Project 16: Casino payout form</h2>
+<h3>What made you smile?</h3>
+<p>JS Dima!</p>
+<h3>What did you find confusing?</h3>
+<p>
+    There was nothing particular very confusing as is very similar to the deposit request flow, so we have a good
+    starting point, the only thing that blocked of for a few minutes was the enabling the gateway account to accepts
+    payouts.
+</p>
+<ul>
+    <li>
+        The documentation preview example did not work as expected on Linux Firefox due to CORS issues. However, when the example
+        was opened on StackBlitz, the payout request was successfully made. Unfortunately, the Instruments became stuck in a loading state,
+        preventing the payout request from being completed.
+        <br/>
+        <img src="payout-stackblitz.png" alt="project-6-1">
+    </li>
+    <li>
+        Directly copying text from the code walkthrough component (excluding the copy to clipboard popup) can result in extra lines,
+        which can be frustrating.
+    </li>
+    <li>
+        The documentation's banner for enabling payout configuration on the gateway uses an info color, which is typically associated
+        with optional information. It would be more effective to use a warning color to draw attention to this crucial step.
+        Additionally, it is not included in the prerequisites list, which could lead to oversight.
+        <br/>
+        <img src="payout-info-banner.png" alt="project-6-2">
+    </li>
+    <li>
+        After completing the payout request, the result screen will display a link to redirect to the organization website. It is not possible
+        to remove this link in Instruments.
+        <br/>
+        <img src="payout-result-link.png" alt="project-6-3">
+    </li>
+</ul>
+
