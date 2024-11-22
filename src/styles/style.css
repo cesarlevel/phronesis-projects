@@ -41,6 +41,20 @@ h1 {
   margin: 0 auto;
 }
 
+input {
+  border-radius: 8px;
+  border: 1px solid var(--color-primary);
+  padding: 0.6em 1.2em;
+  color: var(--color-primary);
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  outline: none;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid var(--color-primary);
