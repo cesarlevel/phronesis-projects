@@ -1,10 +1,30 @@
 let authorization = null;
+let currency = 'USD';
 export default async function casinoPayout() {
     authorization = await getToken(app.state.customerId);
 
     document
         .querySelector(".payout")
         .addEventListener("click", () => requestPayout(document.getElementById("amount").value));
+
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', async (e) => {
+            e.preventDefault();
+            await selectCurrency(button, button.textContent);
+        });
+    });
+}
+
+async function selectCurrency(button, _currency) {
+    document.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('is-active');
+    });
+
+    button.classList.add('is-active');
+    currency = _currency;
+
+    document.getElementById("rebilly-instruments").style.display = "none";
+    document.getElementById("payout-request").style.display = "block";
 }
 
 async function getPayoutRequest (amount) {
@@ -12,7 +32,7 @@ async function getPayoutRequest (amount) {
         data: {
             websiteId: app.state.websiteId,
             customerId: app.state.customerId,
-            currency: "USD",
+            currency,
             amount,
         },
     });
@@ -25,6 +45,7 @@ async function requestPayout(amount) {
 
     document.getElementById("payout-request").style.display = "none";
     document.getElementById("rebilly-instruments").style.display = "block";
+    document.getElementById("buttons").style.display = "none";
 
     console.log("Payout request created", payoutRequest);
 
