@@ -8,18 +8,18 @@ export default class State {
         this.instrumentsBaseOptions = {
             apiMode: 'sandbox',
             theme: {
-                colorPrimary: '#646cff', // Brand color
-                colorText: '#646cff', // Text color
-                colorBackground: '#030c25',
+                colorPrimary: '#64ff8d', // Brand color
+                colorText: '#64ff8d', // Text color
+                colorBackground: '#0c2503',
                 colorDanger: '#F9740A',
-                buttonColorText: '#646cff',
+                buttonColorText: '#64ff8d',
             },
             css: `
                 .rebilly-instruments-button {
                     color: #030c25;
                 }
                 .rebilly-instruments-form-field-label {
-                    color: #646cff;
+                    color: #64ff8d;
                 }
             `,
         }

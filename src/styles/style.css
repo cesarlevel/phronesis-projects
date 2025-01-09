@@ -6,8 +6,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --color-primary: #646cff;
-  --color-secondary: #030c25;
+  --color-primary: #64ff8d;
+  --color-secondary: #0c2503;
 
   color: var(--color-primary);
   background-color: var(--color-secondary);

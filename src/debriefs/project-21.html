@@ -1,0 +1,50 @@
+<h2>Project 21: Casino fraud prevention</h2>
+<h3>What made you smile?</h3>
+<p>Collaborating with a new team member.</p>
+<h3>What did you find confusing?</h3>
+<p>There were no major challenges in this case, as the previous trainings greatly facilitated the process.</p>
+<ul>
+    <li>
+        Risk score metadata seems to not work on storefront APIs.
+    </li>
+    <li>It is recommended to split the blocklist section into two separate sub-sections, similar to the Rules section. This will enhance the usability and intuitiveness of the interface. The current setup, with the "Automated blocklists" button inside the "Blocklist" section, can be confusing for users.
+        <br/>
+        <img src="blocklist_1.png" alt="blocklist_1">
+    </li>
+    <li>
+        The Risk Factor settings for "Declined payment instrument velocity" are not correctly incrementing the risk factor, despite being configured to do so. Conversely, other factors are incorrectly incrementing the risk factor even when not explicitly set to do so.
+        <br/>
+        <div>
+            <img src="riskscore_1.png" alt="riskscore_1">
+            <img src="riskscore_2.png" alt="riskscore_2">
+        </div>
+        <div>
+            <a href="https://app-sandbox.rebilly.com/phronesis-dc-games/transactions/txn_01JH69H8BKD9CRM6KE9080RE29">Declined payment instrument velocity transaction</a>
+        </div>
+        <br/>
+    </li>
+    <li>
+        The "Declined payment instrument velocity" feature encountered issues with an American Express card (card number: 371449635398431). There was confusion with the increments on the other risk factors, automatically incrementing the risk factor even when not explicitly set to do so.
+        <br/>
+        <img src="riskscore_3.png" alt="riskscore_3">
+    </li>
+    <li>
+        It would be beneficial to include a "Select" option for Hours, Days, and Minutes to simplify the input process for users. This change would prevent users from having to convert between time units, reducing potential confusion and making the interface more user-friendly, as most users are accustomed to working with days and hours.
+        <br/>
+        <img src="blocklist_2.png" alt="blocklist_2">
+    </li>
+    <li>
+        To enhance user understanding, it is recommended to include descriptions for the predefined codes within the filter. This would clarify the meanings and available options for each code. Another approach could be to remove predefined codes altogether, allowing users to enter their own codes as needed. Additionally, making the titles of the predefined items more specific could also improve user comprehension.
+        <br/>
+        <img src="blocklist_3.png" alt="blocklist_3">
+    </li>
+    <li>
+        The automated blocklist feature was utilized to complete the exercise, rather than the risk score UI.
+    </li>
+    <li>
+        Utilizing the collect payment option on Recomm's customer screen enabled us to successfully complete the various scenarios of the exercise. Although the blocklist UI functioned as expected, the difficulties encountered with risk factor calculation added a layer of complexity to the task.
+        <br/>
+        <img style="width: 100%; max-width: 800px;" src="blocklist_4.png" alt="blocklist_4">
+    </li>
+</ul>
+

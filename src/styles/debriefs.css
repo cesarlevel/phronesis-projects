@@ -13,16 +13,20 @@
     img {
       width: 100%;
       max-width: 460px;
-      border: 1px solid #646cff;
+      border: 1px solid var(--color-primary);
       margin: 1rem 0 2.5rem;
       box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
       position: relative;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 
   #debriefs-app {
     padding: 3rem;
-    border: 1px solid #646cff;
+    border: 1px solid var(--color-primary);
     width: 100%;
   }
   
