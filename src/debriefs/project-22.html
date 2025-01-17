@@ -1,0 +1,38 @@
+<h2>Project 22: Manage volume limits</h2>
+<h3>What made you smile?</h3>
+<p>Good times with new team!</p>
+<h3>What did you find confusing?</h3>
+<p>The lag between the time the volume limit is set and the time it is reflected in the UI.</p>
+<ul>
+    <li>
+        Rule names are not displaying correctly on the resport page, reports shows names in lowercase.
+        <br/>
+        <img src="limits_1.png" style="width: 100%; max-width: 600px;"  alt="limits_1">
+        <img src="limits_2.png" style="width: 100%; max-width: 600px;"  alt="limits_2">
+    </li>
+    <li>
+        No way to set up limit of specific currency.
+        <br/>
+        <img src="limits_3.png" style="width: 100%; max-width: 600px;"  alt="limits_3">
+    </li>
+    <li>
+        Screenshot of our rules engine configuration.
+        <br/>
+        <img src="limits_4.png" style="width: 100%; max-width: 600px;"  alt="limits_4">
+    </li>
+    <li>
+        Lag in rules caused 7 transactions to process on gateway-a2 when it should have been for $5,000.00 before switching over to gateway-b2 (we suffixed the gateway to test again this issue). Same issue with the volume limit set on number of transactions, in that case there we set the limits to 5 (50 were too many transactions) but 7 transactions processed before switching over to another gateway.
+        <br/>
+        <img src="limits_5.png" style="width: 100%; max-width: 800px;"  alt="limits_5">
+    </li>
+    <li>
+        “Schedule downtime” is backwards in the documentation, in the Recomm UI it is “Downtime schedule”
+        <br/>
+        <img src="limits_6.png" style="width: 100%; max-width: 600px;"  alt="limits_6">
+    </li>
+    <!-- <li>It is recommended to split the blocklist section into two separate sub-sections, similar to the Rules section. This will enhance the usability and intuitiveness of the interface. The current setup, with the "Automated blocklists" button inside the "Blocklist" section, can be confusing for users.
+        <br/>
+        <img src="blocklist_1.png" alt="blocklist_1">
+    </li> -->
+</ul>
+
