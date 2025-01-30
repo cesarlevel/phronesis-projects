@@ -1,0 +1,43 @@
+<h2>Project 24: Route 3DS with checkout.com on Rebilly</h2>
+<h3>What made you smile?</h3>
+<p>Integrating gateways is not that easy.</p>
+<h3>What did you find confusing?</h3>
+<p>Rules engine conditions and testing cards.</p>
+<ul>
+    <li>
+        Seems like the only credit card that can triggers 3ds is the Visa card 4111111111111111. We could not find any other card that triggers 3ds.
+        <br/>
+    </li>
+    <li>
+        During the setup of the 3DS option on the gateway account form, we observed a lack of visual indication for errors within the 3DS-related fields.
+        <br/>
+        <img src="3ds_2.png" style="width: 100%; max-width: 600px; margin-bottom: 0;"  alt="3ds_2">
+        <small style="display: block; margin-top: 10px; margin-bottom: 30px;">Acquire merchant ID Visa is invalid</small>
+    </li>
+    <li>
+        The Sticky gateway feature made routing gateways testing a bit difficult.
+    </li>
+    <li>
+        During 3DS testing with the Visa card, the approval flow functioned correctly, and the transaction was visible on both Recomm and Checkout.com. However, in the rejection flow, the transaction appeared on Recomm with the correct gateway message, but it did not appear on the Checkout.com dashboard.
+        <br/>
+        <img src="3ds_4.png" style="width: 100%; max-width: 600px;"  alt="3ds_4">
+        <img src="3ds_5.png" style="width: 100%; max-width: 600px;"  alt="3ds_5">
+    </li>
+    <li>
+        It is essential to explore methods for testing 3DS with a variety of payment cards, including those with specific Bins listed (Value lists).
+        <br/>
+        <img src="3ds_3.png" style="width: 100%; max-width: 600px;"  alt="value_list">
+    </li>
+    <li>
+        A proper gateway routing can be established using the following rule set:
+        <br/>
+        <img src="3ds_1.png" style="width: 100%; max-width: 600px;"  alt="rule_set">
+    </li>
+    <!-- <li>
+        Initially, the gateway integration failed due to the Secret API key not being configured with the processing channel ID. However, upon further review of the documentation, we successfully integrated the gateway by following the same steps used for services like Zoura. Notably, no additional settings were required beyond providing the secret API key during the Recomm gateway configuration.
+        <br/>
+        <img src="checkout_1.png" style="width: 100%; max-width: 600px;"  alt="checkout_1">
+        <img src="checkout_2.png" style="width: 100%; max-width: 600px;"  alt="checkout_2">
+    </li> -->
+</ul>
+
