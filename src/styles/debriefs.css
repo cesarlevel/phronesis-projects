@@ -22,12 +22,25 @@
     a {
       text-decoration: underline;
     }
+
+    code {
+      display: inline-block;
+      border: 1px solid var(--color-primary);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.2rem;
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
   }
 
   #debriefs-app {
     padding: 3rem;
     border: 1px solid var(--color-primary);
     width: 100%;
+
+    li + li {
+      margin-top: 1rem;
+    }
   }
   
   .debriefs-items {
