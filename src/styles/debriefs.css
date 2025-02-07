@@ -14,7 +14,7 @@
       width: 100%;
       max-width: 460px;
       border: 1px solid var(--color-primary);
-      margin: 1rem 0 2.5rem;
+      margin: 1rem 0;
       box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
       position: relative;
     }
@@ -28,7 +28,6 @@
       border: 1px solid var(--color-primary);
       padding: 0.2rem 0.4rem;
       border-radius: 0.2rem;
-      margin-right: 0.5rem;
       font-weight: 600;
     }
   }
@@ -37,6 +36,18 @@
     padding: 3rem;
     border: 1px solid var(--color-primary);
     width: 100%;
+
+    fieldset {
+      border: 1px solid var(--color-primary);
+      border-radius: 0.2rem;
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
     li + li {
       margin-top: 1rem;
