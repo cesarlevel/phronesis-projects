@@ -1,39 +1,13 @@
 <h2>Project 29: Deposits again</h2>
 <h3>What made you smile?</h3>
-<p>Webhook capturing process was really straightforward.</p>
+<p>How simple the deposits were to implement.</p>
 <h3>What did you find confusing?</h3>
-<p>Multiple webhooks were fired (subscription-modified) when reactivating a subscription.</p>
+<p>Nothing really.</p>
 <ul>
     <li>
         <fieldset>
-            <legend><code>QUESTION</code></legend>
-            When reactivating a subscription, why are multiple webhooks fired (subscription-modified)?
-            <br/>
-            <img src="reactivation_1.png" style="width: 100%; max-width: 600px;"  alt="reactivation_1">
-        </fieldset>
-    </li>
-    <li>
-        <fieldset>
-            <legend><code>SUGGESTION</code></legend>
-            Add a <strong>All subscription events</strong> option for the webhook form. To avoid sleecting multiple events. Probably same for other events.
-            <br/>
-            <img src="reactivation_4.png" style="width: 100%; max-width: 600px;"  alt="reactivation_4">
-        </fieldset>
-    </li>
-    <li>
-        <fieldset>
-            <legend><code>BUG</code></legend>
-            Quote creation time seems to be differente from the quote details created on.
-            <br/>
-            <img src="reactivation_2.png" style="width: 100%; max-width: 600px;"  alt="reactivation_2">
-        </fieldset>
-    </li>
-    <li>
-        <fieldset>
             <legend><code>COMMENT</code></legend>
-            The webhook event successfully captured the subscription reactivation.
-            <br/>
-            <img src="reactivation_3.png" style="width: 100%; max-width: 600px;"  alt="reactivation_3">
+            We were unable to directly update the address on the saved payment card. To update the address, we created a new payment instrument with the same number and an updated address.
         </fieldset>
     </li>
 </ul>

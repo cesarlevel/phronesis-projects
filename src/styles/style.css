@@ -41,6 +41,12 @@
   --r-payment-method-item-background: var(--r-secondary);
   --r-payment-method-item-border-color: var(--r-primary);
   --r-payment-method-item-hover-border-color: var(--r-primary);
+
+  --r-border-radius: 16px;
+}
+
+.r-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -146,7 +152,7 @@ footer {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 8px;
-  display: inline-block;
+  display: inline-flex;
   width: 560px;
   border: 1px solid var(--color-primary);
 }
