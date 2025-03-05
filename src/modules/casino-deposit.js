@@ -1,5 +1,3 @@
-import { depositPermissions } from '../data/deposit-permissions';
-
 export default async function casinoDeposit() {
     const localState = {
         currency: 'USD',
@@ -10,7 +8,8 @@ export default async function casinoDeposit() {
             CAD: 'dep_str_01JBEZ06C753GDAS1XSR24WT3N',
         },
         buttons: document.querySelectorAll('button'),
-        loaderEl: document.querySelector('.instruments-loader'),
+        mountElement: document.querySelector('.deposit-wrapper'),
+        cashierToken: null,
     }
 
     async function selectCurrency(button, currency) {
@@ -20,20 +19,15 @@ export default async function casinoDeposit() {
     
         button.classList.add('is-active');
         localState.currency = currency;
-        localState.depositRequestId = await getDepositRequestId();
+        await getDepositRequestToken();
     
-        RebillyInstruments.update({
-            deposit: {
-                depositRequestId: localState.depositRequestId,
-            },
-        });
+        await initDeposit();
     }
 
-    async function getDepositRequestId() {
+    async function getDepositRequestToken() {
         const requestDepositData = {
             websiteId: app.state.websiteId,
             customerId: app.state.customerId,
-            strategyId: localState.strategies[localState.currency],
             currency: localState.currency
         };
     
@@ -41,57 +35,20 @@ export default async function casinoDeposit() {
             data: requestDepositData,
         });
     
-        return depositFields.id;
+        localState.cashierToken = depositFields.cashierToken;
     }
 
-    async function initRequest() {
-        const response = {};
-        const data = {
-            mode: "passwordless",
-            customerId: app.state.customerId,
-        };
-        const {fields: login} = await app.api.customerAuthentication.login({
-            data,
-        });
-        const {fields: exchangeToken} =
-            await app.api.customerAuthentication.exchangeToken({
-                token: login.token,
-                data: {
-                    acl: [
-                        {
-                            scope: {
-                                organizationId: app.state.organizationId,
-                            },
-                            permissions: depositPermissions,
-                        },
-                    ],
-                    customClaims: {
-                        websiteId: app.state.websiteId,
-                    },
-                },
+    async function initDeposit() {
+        await getDepositRequestToken();
+
+        if (window.RebillyCashier) {
+            RebillyCashier.renderDeposit({
+                mountElement: localState.mountElement,
+                cashierToken: localState.cashierToken,
             });
-        
-        response.token = exchangeToken.token;
-        response.depositRequestId = await getDepositRequestId();
-    
-        localState.token = response.token;
-        localState.depositRequestId = response.depositRequestId;
-    }
-
-    async function initInstruments() {
-        let options = {
-            ...app.state.instrumentsBaseOptions,
-            deposit: {
-                depositRequestId: localState.depositRequestId,
-            },
-            jwt: localState.token,
-        };
-    
-        RebillyInstruments.mount(options);
-    }
-
-    function toggleLoader(show = true) {
-        localState.loaderEl.classList.toggle('is-active', show);
+        } else {
+            console.error('RebillyCashier library not loaded');
+        }
     }
 
     localState.buttons.forEach(button => {
@@ -101,8 +58,5 @@ export default async function casinoDeposit() {
         });
     });
 
-    toggleLoader(true);
-    await initRequest();
-    await initInstruments();
-    toggleLoader(false);
+    await initDeposit();
 }

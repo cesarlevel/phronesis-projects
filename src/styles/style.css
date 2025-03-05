@@ -16,6 +16,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --r-primary: var(--color-primary);
+  --r-secondary: var(--color-secondary);
+  --r-surface: var(--color-secondary);
+  --r-border-color: var(--color-primary);
+
+  --r-text: var(--r-primary);
+  --r-input-placeholder-text-color: var(--r-primary);
+  --r-button-primary-text-color: var(--r-secondary);
+  --r-button-primary-text-color-hover: var(--r-secondary);
+  --r-button-border-color: var(--r-primary);
+  --r-input-border-color: var(--r-primary);
+  --r-input-text-color: var(--r-primary);
+  --r-input-text-color-placeholder: var(--r-primary);
+
+  --r-select-background: var(--r-secondary);
+  --r-select-border-color: var(--r-primary);
+  --r-select-text-color: var(--r-primary);
+  --r-select-text-color-placeholder: var(--r-primary);
+
+  --r-icon-color: var(--r-primary);
+
+  --r-payment-method-item-background: var(--r-secondary);
+  --r-payment-method-item-border-color: var(--r-primary);
+  --r-payment-method-item-hover-border-color: var(--r-primary);
 }
 
 a {
@@ -115,6 +140,15 @@ footer {
 .container {
   position: relative;
   min-height: 160px;
+}
+
+.deposit {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  display: inline-block;
+  width: 560px;
+  border: 1px solid var(--color-primary);
 }
 
 .loader {
