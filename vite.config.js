@@ -1,8 +1,10 @@
 // vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import mkcert from 'vite-plugin-mkcert'
 
 export default defineConfig({
+  plugins: [mkcert()],
   build: {
     rollupOptions: {
       input: {
@@ -13,5 +15,8 @@ export default defineConfig({
         casinoPayout: resolve(__dirname, 'src/modules/casino-payout.html'),
       },
     },
+  },
+  server: {
+    https: true,
   },
 })

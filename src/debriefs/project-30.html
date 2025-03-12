@@ -1,0 +1,47 @@
+<h2>Project 30: Collect KYC documents</h2>
+<h3>What made you smile?</h3>
+<p>When it worked (no camera required) worked really well.</p>
+<h3>What did you find confusing?</h3>
+<p>Not being able to use the camera.</p>
+<ul>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            On Firefox the message that switches from "Front side" to "Back side" has some rendering issues.
+            <br>
+            <br>
+            <img src="kyc_5.png" style="width: 100%; max-width: 600px;"  alt="kyc_5">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Camera does not work for the KYC flow when inside an iframe. There is no popup to allow the user to take a photo.
+            We try to use the attribute "allow: camera" in the iframe, but it does not work. As a workaround we used the "Use another decvice"
+            to be able to use a mobile device and complete the KYC flow.
+            <br>
+            <br>
+            <img src="kyc_1.png" style="width: 100%; max-width: 600px;"  alt="kyc_1">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>COMMENT</code></legend>
+            When KYC document are rejected we get the declined result screen.
+            <br>
+            <br>
+            <img src="kyc_2.png" style="width: 100%; max-width: 600px;"  alt="kyc_2">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>COMMENT</code></legend>
+            When KYC document are accepted we get the accepted result screen.
+            <br>
+            <br>
+            <img src="kyc_3.png" style="width: 100%; max-width: 600px;"  alt="kyc_3">
+            <img src="kyc_4.png" style="width: 100%; max-width: 600px;"  alt="kyc_4">
+        </fieldset>
+    </li>
+</ul>
+
