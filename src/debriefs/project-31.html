@@ -1,0 +1,119 @@
+<h2>Project 31: Orders Early Access</h2>
+<h3>What made you smile?</h3>
+<p>When it worked (no camera required) worked really well.</p>
+<h3>What did you find confusing?</h3>
+<p>Issues with reporting usage in the orders page and some details pages.</p>
+<ul>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            New orders and active ones are not showing up in data tables.
+            <br>
+            <img src="orders_1.png" style="width: 100%; max-width: 600px;"  alt="orders_1">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>SUGGESTION</code></legend>
+            Add a link to the order on the timeline. At the moment, you can access the order via the tile below the customer details.
+            <br>
+            <img src="orders_2.png" style="width: 100%; max-width: 600px;"  alt="orders_2">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>SUGGESTION</code></legend>
+            We encounter an error when opening the order: "upcoming invoice not found." This seems normal at this point, so it should not be shown as an error to the user.
+            <br>
+            <img src="orders_3.png" style="width: 100%; max-width: 600px;" alt="orders_3">
+            <br>
+            We can see in the response to the orders call that the upcomingInvoiceId is null, so perhaps this request that results in a 404 is not needed.
+            <br>
+            <img src="orders_4.png" style="width: 100%; max-width: 600px;" alt="orders_4">
+            <br>
+            We see the same issue with a one-time order: "order not found."
+            <br>
+            <img src="orders_5.png" style="width: 100%; max-width: 600px;" alt="orders_5">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Products and plans are not showing on the recurring orders tile on the customer details page.
+            <br>
+            <img src="orders_6.png" style="width: 100%; max-width: 600px;" alt="orders_6">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>NITPICK</code></legend>
+            Clicking the back button on the order details page takes you to the data tables, which should go to the previous screen.
+            <br>
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>NITPICK</code></legend>
+            The timeline order is incorrect; subscription activated seems to come before transaction approved. This appears to be a backend issue based on the API response.
+            <br>
+            <img src="orders_7.png" style="width: 100%; max-width: 600px;" alt="orders_7">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Remove the duplicate order details. On the order details page, the edit button leads to the same place, and we already have the customer ID on the left panel. Styles for the tiles should be similar (no borders - .tile.tile-plain).
+            <br>
+            <img src="orders_8.png" style="width: 100%; max-width: 600px;" alt="orders_8">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            After completing the one-time order, we see a purchase tile that is not populated with data.
+            <br>
+            <img src="orders_9.png" style="width: 100%; max-width: 600px;" alt="orders_9">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>NITPICK</code></legend>
+            The usage form needs a divider between the two tile forms; the tile content text should be text-muted.
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            For tiered billing, we cannot update the usage on the form; the button is not visible.
+            <br>
+            <img src="orders_10.png" style="width: 100%; max-width: 600px;" alt="orders_10">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            On the order item details, we have the same issue with the repeated order details. In the correct order details tile, there are a few properties marked as n/a, which can be filtered out. Additionally, the order details have actions related to the order, not the order item. We are somewhat confused about the purpose of this view; what are the actions on the order item? We are repeating the same information that we already have on the order details page.
+            <br>
+            <img src="orders_11.png" style="width: 100%; max-width: 600px;" alt="orders_11">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>CONFUSION</code></legend>
+            In the timeline, we see "subscription activated." If we click, we go to the order details page, and when we click on the order items, we seem to go to a subscription-related page, at least according to the URL. Should the timeline say "Order activated," or should we have two instances of "subscription activated" (for two items in an order)?
+            <br>
+            <img src="orders_12.png" style="width: 100%; max-width: 600px;" alt="orders_12">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>POSSIBLE BUG</code></legend>
+            The invoice and upcoming invoice look good, but when editing the items on the upcoming invoice, we see the original items from the first invoice. It is unclear if this is by design. We can see that we use the order GET to fill the edit items on the upcoming invoice, but they do not match if the order has a one-time item in the initial invoice.
+            <br>
+            <img src="orders_13.png" style="width: 100%; max-width: 600px;" alt="orders_13">
+            <br>
+            <img src="orders_14.png" style="width: 100%; max-width: 600px;" alt="orders_14">
+        </fieldset>
+    </li>
+</ul>
+
