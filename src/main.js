@@ -16,11 +16,13 @@ async function init() {
   app.state = new State();
   app.state.showLoader();
 
+  // Setup the HTML files
   for await (const [path, mod] of Object.entries(templates)) {
     const {default: template} = await mod();
     routes[path.replace(/\.\/modules|(\.html)/gi, '')] = template;
   }
 
+  // Setup the JS files
   for await (const path of Object.keys(modules)) {
     const mod = await modules[path]();
     app = {
@@ -41,6 +43,7 @@ async function init() {
   });
 
   app.state.hideLoader();
+  console.log(app.state);
 }
 
 window.addEventListener('DOMContentLoaded', init);

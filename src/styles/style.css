@@ -6,8 +6,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --color-primary: #64ff8d;
-  --color-secondary: #0c2503;
+  --color-primary: #102477;
+  --color-secondary: #a8c1ff;
 
   color: var(--color-primary);
   background-color: var(--color-secondary);
@@ -21,6 +21,7 @@
   --r-secondary: var(--color-secondary);
   --r-surface: var(--color-secondary);
   --r-border-color: var(--color-primary);
+  --r-border: var(--color-primary);
 
   --r-text: var(--r-primary);
   --r-input-placeholder-text-color: var(--r-primary);
