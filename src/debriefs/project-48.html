@@ -1,0 +1,43 @@
+<h2>Project 48: Custom webhooks</h2>
+<h3>What made you smile?</h3>
+<p>Webhooks are always fun to use.</p>
+<h3>What did you find confusing?</h3>
+<p>Waiting for the webhook to be triggered when adding condition to it.</p>
+<ul>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Typo on documentaion. Should be <strong>payload body</strong>
+            <br>
+            <img src="cus-webhook-1.png" style="width: 100%; max-width: 600px;"  alt="cus-webhook-1">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>SUGGESTION</code></legend>
+            The webhook configuration lacks placeholder information or examples. We had to reference the default event payload and API documentation to understand the expected format.
+            We should add placeholder examples and format guidance similar to how we handle email notification templates.
+            <br>
+            <img src="cus-webhook-2.png" style="width: 100%; max-width: 600px;"  alt="cus-webhook-2">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Webhook conditions are not functioning properly. We tested with productId and planId parameters, but the conditions failed to filter events as expected.
+            <br>
+            <img src="cus-webhook-3.png" style="width: 100%; max-width: 600px;" alt="cus-webhook-3">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>COMMENT</code></legend>
+            The webhook functioned correctly after removing the conditions, confirming that the issue was specifically with the condition filtering logic.
+            <br>
+            <img src="cus-webhook-4.png" style="width: 100%; max-width: 600px;" alt="cus-webhook-4">
+            <br>
+            <img src="cus-webhook-5.png" style="width: 100%; max-width: 400px;" alt="cus-webhook-5">
+        </fieldset>
+    </li>
+</ul>
+
