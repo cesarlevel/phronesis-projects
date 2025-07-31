@@ -43,7 +43,6 @@ async function init() {
   });
 
   app.state.hideLoader();
-  console.log(app.state);
 }
 
 window.addEventListener('DOMContentLoaded', init);
