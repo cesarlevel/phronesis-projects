@@ -2,6 +2,9 @@
 const templates = import.meta.glob('../debriefs/*.html', {query: '?raw'});
 
 export default async function debriefs() {
+    // Show global loader while importing HTML templates
+    app.state.showLoader();
+    
     const debriefsEl = document.querySelector('.debriefs-items');
     const debriefsApp = document.querySelector('#debriefs-app');
     const debriefsItems = {};
@@ -9,9 +12,9 @@ export default async function debriefs() {
     for await (const [path, mod] of Object.entries(templates)) {
         const {default: template} = await mod();
         debriefsItems[path.replace(/.*\/|(\.html)/gi, '')] = template;
-      }
+    }
 
-      debriefsEl.innerHTML = Object.keys(debriefsItems).map(path => `
+    debriefsEl.innerHTML = Object.keys(debriefsItems).map(path => `
         <li>
             <a class="debriefs-item" data-template="${path}">${path.replace(/\.\//gi, '')}</a>
         </li>`).join('');
@@ -26,4 +29,7 @@ export default async function debriefs() {
             el.classList.add('is-active');
         });
     });
+
+    // Hide global loader after templates are loaded and DOM is updated
+    app.state.hideLoader();
 }
