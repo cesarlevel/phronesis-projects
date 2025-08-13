@@ -1,0 +1,40 @@
+<h2>Project 52: Risk scores</h2>
+<h3>What made you smile?</h3>
+<p>It actually works.</p>
+<h3>What did you find confusing?</h3>
+<p>Setting up risk scores with bracket conditions.</p>
+<ul>
+    <li>
+        <fieldset>
+            <legend><code>CONFUSION</code></legend>
+            Setting risk score values that are boolean like `hasMismatchBillingCountry` is straightforward, but when setting up risk scores that expect a numeric range, it's unclear how to handle values like "100 and up." Should we set it as 100 and 101, or 100 and 200, or does the specific upper bound not matter?
+            <br>
+            <img src="rs-1.png" style="width: 100%; max-width: 800px;" alt="rs-1">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Not adding an end value on a numeric range condition will result in a black error message like this:
+            <br>
+            <img src="rs-3.png" style="width: 100%; max-width: 800px;" alt="rs-3">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>BUG</code></legend>
+            Risk score preview is not being displayed.
+            <br>
+            <img src="rs-2.png" style="width: 100%; max-width: 800px;" alt="rs-2">
+        </fieldset>
+    </li>
+    <li>
+        <fieldset>
+            <legend><code>COMMENT</code></legend>
+            Simulation worked really well. We were able to properly test a value list and see if it was working as expected.
+            <br>
+            <img src="rs-4.png" style="width: 100%; max-width: 800px;" alt="rs-4">
+        </fieldset>
+    </li>
+</ul>
+
