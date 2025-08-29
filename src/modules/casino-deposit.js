@@ -30,8 +30,7 @@ export default async function casinoDeposit() {
             customerId: app.state.customerId,
             currency: localState.currency
         };
-    
-        const {fields: depositFields} = await app.api.depositRequests.create({
+        const {fields: depositFields} = await app.api.cashiers.create({
             data: requestDepositData,
         });
     

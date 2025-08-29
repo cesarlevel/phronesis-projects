@@ -17,37 +17,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --r-primary: var(--color-primary);
-  --r-secondary: var(--color-secondary);
-  --r-surface: var(--color-secondary);
-  --r-border-color: var(--color-primary);
-  --r-border: var(--color-primary);
+  --rebilly-cashier-primary: var(--color-primary);
+  --rebilly-cashier-secondary: var(--color-secondary);
+  --rebilly-cashier-surface: var(--color-secondary);
+  --rebilly-cashier-border-color: var(--color-primary);
+  --rebilly-cashier-border: var(--color-primary);
 
-  --r-text: var(--r-primary);
-  --r-input-placeholder-text-color: var(--r-primary);
-  --r-button-primary-text-color: var(--r-secondary);
-  --r-button-primary-text-color-hover: var(--r-secondary);
-  --r-button-border-color: var(--r-primary);
-  --r-input-border-color: var(--r-primary);
-  --r-input-text-color: var(--r-primary);
-  --r-input-text-color-placeholder: var(--r-primary);
+  --rebilly-cashier-input-placeholder-font-color: var(--color-secondary);
 
-  --r-select-background: var(--r-secondary);
-  --r-select-border-color: var(--r-primary);
-  --r-select-text-color: var(--r-primary);
-  --r-select-text-color-placeholder: var(--r-primary);
-
-  --r-icon-color: var(--r-primary);
-
-  --r-payment-method-item-background: var(--r-secondary);
-  --r-payment-method-item-border-color: var(--r-primary);
-  --r-payment-method-item-hover-border-color: var(--r-primary);
-
-  --r-border-radius: 16px;
+  --rebilly-cashier-button-border-color: var(--color-primary);
+  --rebilly-cashier-button-border-color-primary-hover: var(--color-primary);
+  --rebilly-cashier-font-color: var(--color-primary);
+  --rebilly-cashier-max-width: 100%;
+  --rebilly-cashier-icon-color: var(--color-primary);
+  --rebilly-cashier-border-radius: 16px;
 }
 
-.r-button {
+.rebilly-cashier-button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+.manage-instrument-form {
+  text-align: center;
 }
 
 a {
@@ -154,7 +146,7 @@ footer {
   margin: 1rem 0;
   border-radius: 8px;
   display: inline-flex;
-  width: 560px;
+  width: 690px;
   border: 1px solid var(--color-primary);
 
   > * {
